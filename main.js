@@ -8,12 +8,14 @@ const arr = [a, b, c, d, e];
 (function findDuplicate(arr) {
     const checkDup = {};
     for (const value of arr) {
-        if (checkDup[value.name]) {
-            if (checkDup[value.name] === value)
-                console.log(value);
+        let valKey = JSON.stringify(value);
+        if (checkDup[valKey]) {
+            if (checkDup[valKey] === value)
+                return true;
         }
         else {
-            checkDup[value.name] = value;
+            checkDup[valKey] = value;
         }
     }
+    return false
 })(arr);
