@@ -5,7 +5,7 @@ const d = { name: "moshiko" };
 const e = b;
 const arr = [a, b, c, d, e];
 
-(function findDuplicate(arr) {
+function findDuplicate(arr) {
     const checkDup = {};
     for (const value of arr) {
         let valKey = JSON.stringify(value);
@@ -18,4 +18,6 @@ const arr = [a, b, c, d, e];
         }
     }
     return false
-})(arr);
+};
+
+console.log(findDuplicate(arr));
